@@ -4,23 +4,23 @@ Implementação dos algoritmos da disciplina em **C++**, **Python**, **Java (em 
 
 ## Algoritmos implementados
 ### Métodos Iterativos de Zeros de Funções Reais
-- [] Método da Bisseção
-- [] Método de Newton
-- [] Método da Secante
+- [ ] Método da Bisseção
+- [ ] Método de Newton
+- [ ] Método da Secante
 
 ### Resolução de Sistemas Lineares
 - Métodos Diretos
-  - [] Decomposição LU
-  - [] Eliminação Gaussiana (Simples)
+  - [ ] Decomposição LU
+  - [ ] Eliminação Gaussiana (Simples)
 
 - Métodos Iterativos
-  - [] 
-  - [] 
+  - [ ] 
+  - [ ] 
 
 ### Interpolação Polinomial
-- [] 
-- [] 
-- [] 
+- [ ] 
+- [ ] 
+- [ ] 
 
 
 Implementações em alguma linguagem científica, bem como a implementação de outros métodos poderão ser considerados.
