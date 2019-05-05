@@ -22,5 +22,5 @@ Implementação dos algoritmos da disciplina em **C++**, **Python**, **Java (em 
 - [ ] 
 - [ ] 
 
-
+## Notas
 Implementações em alguma linguagem científica, bem como a implementação de outros métodos poderão ser considerados.
