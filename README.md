@@ -11,11 +11,11 @@ Implementação dos algoritmos da disciplina em **C++**, **Python**, **Java (em 
 ### Resolução de Sistemas Lineares
 - Métodos Diretos
   - [ ] Decomposição LU
-  - [ ] Eliminação Gaussiana (Simples)
+  - [ ] Eliminação Gaussiana
 
 - Métodos Iterativos
-  - [ ] 
-  - [ ] 
+  - [ ] Método de Jacobi-Richardison
+  - [ ] Método de Gauss-Seidel
 
 ### Interpolação Polinomial
 - [ ] 
