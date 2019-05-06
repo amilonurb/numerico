@@ -1,4 +1,8 @@
 ﻿*.exe
 *.class
 
+*.java
+*.kt
+
 .vscode/
+outros/
