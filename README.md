@@ -11,6 +11,7 @@ Implementação dos algoritmos da disciplina em **C++**, **Python**, **Java (em 
 ### Resolução de Sistemas Lineares
 - Métodos Diretos
   - [ ] Decomposição LU
+        - [x] C++
   - [ ] Eliminação Gaussiana
 
 - Métodos Iterativos
