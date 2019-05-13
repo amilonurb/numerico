@@ -4,87 +4,77 @@ using namespace std;
 
 typedef vector<vector<double>> vvd;
 
-void lu(const vvd &matriz) {
-    
-    int n = matriz[0].size();
+#define loop(init_var, init_value, range) for (init_var = init_value; init_var < range; init_var++)
+#define loop_eq(init_var, init_value, range) for (init_var = init_value; init_var <= range; init_var++)
 
-    vvd lower = vvd(n, vector<double>(n));
-    vvd upper = vvd(n, vector<double>(n));
-
-    int i, j, k;
-
-    cout << "Matriz A\n";
-    for (i = 0; i < matriz[0].size(); i++) {
-        for (j = 0; j < matriz.size(); j++) {
+void print_matrix(const vvd &matriz, const string &title) {
+    cout << title << '\n';
+    int i, j;
+    loop(i, 0, matriz[0].size()) {
+        loop(j, 0, matriz[i].size()) {
             cout << matriz[i][j] << '\t';
-        }
-        cout << endl;
-    }
-
-    for (j = 0; j < n; j++) {
-        lower[j][j] = 1;
-        for (i = 0; i <= j; i++) {
-            double sum = 0.0;
-            for (k = 0; k < i; k++) {
-                sum += upper[k][j] * lower[i][k];
-            }
-            upper[i][j] = matriz[i][j] - sum;
-        }
-
-        for (i = j; i < n; i++) {
-            double sum = 0.0;
-            for (k = 0; k < i; k++) {
-                sum += upper[k][j] * lower[i][k];
-            }
-            lower[i][j] = (matriz[i][j] - sum) / upper[j][j];
-        }
-    }
-
-    cout << "\nMatriz L\n";
-    for (i = 0; i < lower[0].size(); i++) {
-        for (j = 0; j < lower.size(); j++) {
-            cout << lower[i][j] << '\t';
-        }
-        cout << endl;
-    }
-
-    cout << "\nMatriz U\n";
-    for (i = 0; i < upper[0].size(); i++) {
-        for (j = 0; j < upper.size(); j++) {
-            cout << upper[i][j] << '\t';
         }
         cout << endl;
     }
 }
 
+double sum(const vvd &a, const vvd &b, int j, int i) {
+    double sum = 0.0;
+    int k;
+    loop(k, 0, i) {
+        sum += a[k][j] * b[i][k];
+    }
+    return sum;
+}
+
+void lu(const vvd &matriz) {
+    int n = matriz[0].size(), i, j;
+
+    vvd lower = vvd(n, vector<double>(n));
+    vvd upper = vvd(n, vector<double>(n));
+
+    print_matrix(matriz, "Matriz A");
+
+    loop(j, 0, n) {
+        lower[j][j] = 1;
+        loop_eq(i, 0, j) {
+            upper[i][j] = matriz[i][j] - sum(upper, lower, j, i);
+        }
+
+        loop(i, j, n) {
+            lower[i][j] = (matriz[i][j] - sum(upper, lower, j, i)) / upper[j][j];
+        }
+    }
+    
+    cout << '\n';
+    print_matrix(lower, "Matriz L");
+
+    cout << '\n';
+    print_matrix(upper, "Matriz U");
+}
+
 int main() {
-    std::setlocale(LC_ALL, "Portuguese");
-
-    cout << "RESOLUÇÃO DE SISTEMAS LINEARES (Ax = b) POR DECOMPOSIÇÃO LU\n\n";
-
-    int n;
-    cout << "1. Entre com a dimensão do sistema linear: ";
+    int n, i, j;
     cin >> n;
 
-    cout << "2. ENTRADA DE DADOS\n";
+    cout << "Matrix Dimension: " << n << " x " << n << '\n';
+
     vvd matriz;
-    for (int i = 0; i < n; i++) {
+    loop(i, 0, n) {
         matriz.push_back(vector<double>(n));
-        cout << "Equação " << (i + 1) << ":\n";
-        for (int j = 0; j < n; j++) {
+        loop(j, 0, n) {
             double a;
-            cout << "Valor do coeficiente " << (j + 1) << ": ";
             cin >> a;
             matriz[i][j] = a;
-            cout << endl;
         }
     }
 
-    //vvd m1 = { { 2, -1, -2 }, { -4, 6, 3 }, { -4, -2, 8 } };
-    // vvd m2 = { { 8, -4, -2 }, { -4, 10, -2 }, { -2, -2, 10 } };
-
     lu(matriz);
-    // lu(m2);
     
+    /*
+     * TEST
+     */
+    // vvd m = { { 8, -4, -2 }, { -4, 10, -2 }, { -2, -2, 10 } };
+    // lu(m);
     return 0;
 }
