@@ -1,6 +1,6 @@
 # Métodos Numéricos Computacionais
 
-Implementação dos algoritmos da disciplina em **C++**, **Python**, **Java (em breve)** e **Kotlin (em breve)**.
+Implementação dos algoritmos da disciplina em **C++**, **Python**, **Java** e **Kotlin (em breve)**.
 
 ## Algoritmos implementados
 ### Métodos Iterativos de Zeros de Funções Reais
@@ -25,12 +25,12 @@ Implementação dos algoritmos da disciplina em **C++**, **Python**, **Java (em 
   * Decomposição LU
     - [x] C++
     - [ ] Python
-    - [ ] Java
+    - [x] Java
     - [ ] Kotlin
   * Eliminação Gaussiana
     - [ ] C++
     - [ ] Python
-    - [ ] Java
+    - [x] Java
     - [ ] Kotlin
 
 * Métodos Iterativos
@@ -46,6 +46,16 @@ Implementação dos algoritmos da disciplina em **C++**, **Python**, **Java (em 
     - [ ] Kotlin
 
 ### Interpolação Polinomial
+* Método de Lagrange
+  - [ ] C++
+  - [ ] Python
+  - [ ] Java
+  - [ ] Kotlin
+* Método de Newton
+  - [ ] C++
+  - [ ] Python
+  - [ ] Java
+  - [ ] Kotlin
 
 ## Notas
 Implementações em alguma linguagem científica, bem como a implementação de outros métodos poderão ser considerados.
