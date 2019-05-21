@@ -28,7 +28,7 @@ Implementação dos algoritmos da disciplina em **C++**, **Python**, **Java** e 
     - [x] Java
     - [ ] Kotlin
   * Eliminação Gaussiana
-    - [ ] C++
+    - [x] C++
     - [ ] Python
     - [x] Java
     - [ ] Kotlin

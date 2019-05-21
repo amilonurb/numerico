@@ -1,32 +1,4 @@
-﻿#include <bits/stdc++.h>
-
-using namespace std;
-
-typedef vector<double> vd;
-typedef vector<vector<double>> vvd;
-
-#define each(element, collection) for (auto &element : collection)
-#define loop(init_var, init_value, range) for (int init_var = (init_value); init_var < (range); init_var++)
-#define loop_rv(init_var, init_value, range) for (int init_var = (init_value); init_var >= (range); init_var--)
-#define loop_eq(init_var, init_value, range) for (int init_var = (init_value); init_var <= (range); init_var++)
-
-void print_vector(const vd &vetor, const string &title);
-void print_matrix(const vvd &matriz, const string &title);
-void solveGauss(vvd &a, vd &b);
-void solveLinearSystem(const vvd &a, const vd &b);
-
-int main() {
-    vvd a = {
-        {2.0, 3.0, -1.0},
-        {4.0, 4.0, -3.0},
-        {2.0, -3.0, 1.0}
-    };
-
-    vd b = {5.0, 3.0, -1.0};
-
-    solveGauss(a, b);
-    return 0;
-}
+﻿#include "gauss.h"
 
 void print_vector(const vd &vetor, const string &title) {
     cout << title << '\n';
