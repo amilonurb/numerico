@@ -34,7 +34,7 @@ Implementação dos algoritmos da disciplina em **C++**, **Python**, **Java** e 
     - [ ] Kotlin
 
 * Métodos Iterativos
-  * Método de Jacobi-Richardison
+  * Método de Jacobi-Richardson
     - [ ] C++
     - [ ] Python
     - [ ] Java
